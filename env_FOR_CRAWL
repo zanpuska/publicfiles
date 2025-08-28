@@ -1,0 +1,99 @@
+# =========================
+# MODES & SYMBOLS
+# =========================
+DRY_RUN=true
+TESTNET=false
+LIVE=false
+
+SYMBOLS=BTCUSDT,ETHUSDT,SOLUSDT
+
+# =========================
+# ACCOUNT & RISK
+# =========================
+START_BALANCE_USDT=1000
+BASE_RISK_PCT=0.01
+DAILY_MAX_DRAWDOWN=0.05
+ALLOCATION_TREND_PCT=0.60
+
+# Per-symbol capital caps (so one symbol can't hog equity)
+SYMBOL_CAPS=BTCUSDT:0.50,ETHUSDT:0.30,DEFAULT:0.20
+DEFAULT_SYMBOL_CAP=0.20
+
+# Exchange fee assumptions for accounting (backtest/dry-run)
+MAKER_FEE_PCT=0.0002
+TAKER_FEE_PCT=0.001
+
+# =========================
+# STRATEGY TUNABLES
+# =========================
+STRAT_INTERVAL_SEC=5
+ATR_LEN=14
+MA_SHORT=20
+MA_LONG=60
+MOM_LOOKBACK=30
+VOL_WINDOW=30
+MIN_NOTIONAL=10
+TRAIL_PCT=0.01
+
+# Session window (UTC hours)
+SESSION_UTC_START=0
+SESSION_UTC_END=24
+
+MAX_CONCURRENT_POS=3
+
+# Regime thresholds
+TREND_STRENGTH_THRESH=0.002
+VOL_HIGH_THRESH=0.01
+
+# Mode multipliers
+AGGR_RISK_MULT=1.25
+CONS_RISK_MULT=0.75
+
+# =========================
+# DYNAMIC SLIPPAGE MODEL
+# =========================
+SLIPPAGE_PCT=0.0005
+BASE_SLIPPAGE_PCT=0.0002
+SLIPPAGE_VOL_COEF=0.10
+SLIPPAGE_ATR_COEF=0.05
+SLIPPAGE_NOTIONAL_COEF=0.000002
+SLIPPAGE_MIN_PCT=0.00005
+SLIPPAGE_MAX_PCT=0.002
+SLIPPAGE_OVERRIDES={}
+
+# =========================
+# OPENAI ADVISOR (optional)
+# =========================
+USE_OPENAI=false
+OPENAI_API_KEY=
+AI_UPDATE_SECS=300
+AI_MEMORY=true
+
+# =========================
+# BACKTEST SETTINGS
+# =========================
+BACKTEST=true
+BACKTEST_SYMBOLS=BTC/USDT
+BACKTEST_TIMEFRAME=1m
+BACKTEST_START=2023-08-24T00:00:00Z
+BACKTEST_END=2025-08-24T00:00:00Z
+BACKTEST_PAGE_LIMIT=1000
+BACKTEST_MAX_CALLS=1200
+BACKTEST_SLEEP_MS=700
+BACKTEST_EXPORT_DIR=./bt_exports
+
+# =========================
+# MYSQL (5.6.26 SAFE)
+# =========================
+USE_MYSQL=true
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USER=bot
+MYSQL_PASSWORD=botpass
+MYSQL_DB=trading
+
+# =========================
+# KEYS
+# =========================
+BINANCE_API_KEY=
+BINANCE_SECRET=
